@@ -31,9 +31,9 @@ public class NetworkConnectionCheck {
 
             if (info != null) {
 
-                for (int i = 0; i < info.length; i++) {
+                for (NetworkInfo anInfo : info) {
 
-                    if (info[i].getState() == NetworkInfo.State.CONNECTED) {
+                    if (anInfo.getState() == NetworkInfo.State.CONNECTED) {
 
                         return true;
                     }

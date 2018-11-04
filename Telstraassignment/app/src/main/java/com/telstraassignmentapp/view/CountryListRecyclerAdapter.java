@@ -26,7 +26,7 @@ public class CountryListRecyclerAdapter extends RecyclerView.Adapter<CountryList
     class CountryListViewHolder extends RecyclerView.ViewHolder{
 
         final CountryListItemBinding countryListItemBinding;
-        public CountryListViewHolder(CountryListItemBinding countryListItemBinding){
+        CountryListViewHolder(CountryListItemBinding countryListItemBinding){
 
             super(countryListItemBinding.getRoot());
             this.countryListItemBinding = countryListItemBinding;

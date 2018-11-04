@@ -1,10 +1,9 @@
 package com.telstraassignmentapp.apiinterface;
 
 
-import android.widget.Toast;
-
 import com.telstraassignmentapp.model.ApiResponse;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import retrofit2.Call;
@@ -29,10 +28,9 @@ public class ApiClient {
 
     public synchronized static ApiClient getInstance() {
         if (apiClient == null) {
-            if (apiClient == null) {
-                apiClient = new ApiClient();
-            }
+            apiClient = new ApiClient();
         }
+
         return apiClient;
     }
 
@@ -42,13 +40,13 @@ public class ApiClient {
         apiCaller.getApiResponse().enqueue(new Callback<ApiResponse>() {
 
             @Override
-            public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
+            public void onResponse(@NonNull Call<ApiResponse> call, @NonNull Response<ApiResponse> response) {
                 mutableLiveData.setValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<ApiResponse> call, Throwable t) {
-            mutableLiveData.setValue(null);
+            public void onFailure(@NonNull Call<ApiResponse> call, @NonNull Throwable t) {
+                mutableLiveData.setValue(null);
             }
 
 

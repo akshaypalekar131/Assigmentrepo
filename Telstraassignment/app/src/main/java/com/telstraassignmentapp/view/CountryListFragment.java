@@ -12,8 +12,6 @@ import com.telstraassignmentapp.model.ApiResponse;
 import com.telstraassignmentapp.model.CountryDetails;
 import com.telstraassignmentapp.utils.NetworkConnectionCheck;
 import com.telstraassignmentapp.viewmodel.CountryListViewModel;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -28,7 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CountryListFragment extends Fragment {
 
-    public static final String TAG = "CountryListFragment";
+     static final String TAG = "CountryListFragment";
 
     private CountryListRecyclerAdapter countryListRecyclerAdapter;
     private FragmentCountryDetailsBinding fragmentCountryDetailsBinding;

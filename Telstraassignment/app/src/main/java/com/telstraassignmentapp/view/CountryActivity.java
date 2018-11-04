@@ -3,14 +3,9 @@ package com.telstraassignmentapp.view;
 import android.os.Bundle;
 
 import com.telstraassignmentapp.R;
-import com.telstraassignmentapp.model.ApiResponse;
-import com.telstraassignmentapp.viewmodel.CountryHeaderViewModel;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 public class CountryActivity extends AppCompatActivity {
 
