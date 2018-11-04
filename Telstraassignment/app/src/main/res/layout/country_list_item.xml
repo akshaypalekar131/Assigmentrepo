@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools"
+    >
+    <data>
+    <variable name="countryDetails" type="com.telstraassignmentapp.model.CountryDetails"
+        />
+        
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:text="@{countryDetails.title}"
+        android:textSize="@dimen/dp_15"
+        android:layout_margin="@dimen/dp_10"
+        android:textColor="@color/country_title_color"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txt_description"
+        android:layout_width="match_parent"
+        android:textStyle="normal"
+        android:textSize="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:text="@{countryDetails.description}"
+        android:layout_below="@+id/txt_title"
+        android:layout_toStartOf="@+id/img_content"
+        android:layout_toLeftOf="@+id/img_content"
+        android:textColor="@color/country_description_color"
+        android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/img_content"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:contentDescription="@string/content_description"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txt_title"
+            bind:imageUrl="@{countryDetails.imageUrl}" />
+        
+    </RelativeLayout>
+</layout>
