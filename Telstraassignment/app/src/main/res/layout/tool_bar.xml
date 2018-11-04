@@ -42,7 +42,7 @@
                 android:layout_weight="0.3"
                 android:contentDescription="@string/content_description"
                 android:scaleType="center"
-                android:src="@drawable/img_notification"
+                android:src="@drawable/img_refresh"
                 android:visibility="gone" />
         </LinearLayout>
 
