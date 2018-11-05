@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.telstraassignmentapp.R;
 import com.telstraassignmentapp.databinding.FragmentCountryDetailsBinding;
@@ -13,7 +12,6 @@ import com.telstraassignmentapp.model.CountryDetails;
 import com.telstraassignmentapp.utils.NetworkConnectionCheck;
 import com.telstraassignmentapp.viewmodel.CountryListViewModel;
 import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -24,7 +22,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CountryListFragment extends Fragment {
+public class CountryListFragment extends Fragment  {
 
      static final String TAG = "CountryListFragment";
 
@@ -38,7 +36,6 @@ public class CountryListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Toast.makeText(getContext(), "inconcreateview", Toast.LENGTH_LONG).show();
         fragmentCountryDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_country_details, container, false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
@@ -49,14 +46,16 @@ public class CountryListFragment extends Fragment {
         fragmentCountryDetailsBinding.rvCountry.setAdapter(countryListRecyclerAdapter);
         // binding.setIsLoading(true);
 
+
+
         return fragmentCountryDetailsBinding.getRoot();
 
     }
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Toast.makeText(getContext(), "onActivityCreated", Toast.LENGTH_LONG).show();
         countryListViewModel = ViewModelProviders.of(this).get(CountryListViewModel.class);
 
         observeViewModel(countryListViewModel, false);
@@ -76,9 +75,7 @@ public class CountryListFragment extends Fragment {
 
             @Override
             public void onChanged(ApiResponse apiResponse) {
-                Toast.makeText(getContext(), "onChanged" + apiResponse.getCountryDetailsList().size(), Toast.LENGTH_LONG).show();
                 if (!apiResponse.getCountryDetailsList().isEmpty() && !isContentRefresh) {
-                    Toast.makeText(getContext(), "inresponse", Toast.LENGTH_LONG).show();
                     fragmentCountryDetailsBinding.toolbarLayout.toolbarTitle.setText(apiResponse.getTitle());
                     fragmentCountryDetailsBinding.rvCountry.setVisibility(View.VISIBLE);
                     fragmentCountryDetailsBinding.toolbarLayout.imgNotificationBell.setVisibility(View.VISIBLE);
@@ -87,7 +84,6 @@ public class CountryListFragment extends Fragment {
                     countryListRecyclerAdapter.setCountryDetailsList(countryDetailsList);
                     refreshList = countryDetailsList;
                 } else {
-                    Toast.makeText(getContext(), "in else for refresh"+refreshList.size(), Toast.LENGTH_LONG).show();
                     fragmentCountryDetailsBinding.toolbarLayout.toolbarTitle.setText(apiResponse.getTitle());
                     refreshList.addAll(apiResponse.getCountryDetailsList());
                     fragmentCountryDetailsBinding.rvCountry.setVisibility(View.VISIBLE);
@@ -110,5 +106,6 @@ public class CountryListFragment extends Fragment {
             }
         });
     }
+
 
 }
