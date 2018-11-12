@@ -1,5 +1,4 @@
 package com.telstraassignmentapp.model;
-
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;

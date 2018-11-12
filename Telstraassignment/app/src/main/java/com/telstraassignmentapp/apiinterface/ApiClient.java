@@ -14,8 +14,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private ApiCaller apiCaller;
     private static ApiClient apiClient;
+    private ApiCaller apiCaller;
 
     private ApiClient() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -54,6 +54,4 @@ public class ApiClient {
 
         return mutableLiveData;
     }
-
-
 }

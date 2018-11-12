@@ -6,6 +6,12 @@ import java.util.List;
 
 public class ApiResponse {
 
+    @SerializedName("title")
+    private String title;
+
+    @SerializedName("rows")
+    private List<CountryDetails> countryDetailsList;
+
     public String getTitle() {
         return title;
     }
@@ -21,13 +27,4 @@ public class ApiResponse {
     public void setCountryDetailsList(List<CountryDetails> countryDetailsList) {
         this.countryDetailsList = countryDetailsList;
     }
-
-    @SerializedName("title")
-    private String title;
-
-    @SerializedName("rows")
-    private List<CountryDetails> countryDetailsList;
-
-
-
 }

@@ -23,10 +23,11 @@ public class CountryListRecyclerAdapter extends RecyclerView.Adapter<CountryList
         notifyDataSetChanged();
     }
 
-    class CountryListViewHolder extends RecyclerView.ViewHolder{
+    class CountryListViewHolder extends RecyclerView.ViewHolder {
 
         final CountryListItemBinding countryListItemBinding;
-        CountryListViewHolder(CountryListItemBinding countryListItemBinding){
+
+        CountryListViewHolder(CountryListItemBinding countryListItemBinding) {
 
             super(countryListItemBinding.getRoot());
             this.countryListItemBinding = countryListItemBinding;

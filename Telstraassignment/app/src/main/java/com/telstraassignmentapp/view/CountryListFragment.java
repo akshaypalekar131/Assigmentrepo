@@ -1,9 +1,12 @@
 package com.telstraassignmentapp.view;
 
+
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.telstraassignmentapp.R;
 import com.telstraassignmentapp.databinding.FragmentCountryDetailsBinding;
@@ -11,7 +14,10 @@ import com.telstraassignmentapp.model.ApiResponse;
 import com.telstraassignmentapp.model.CountryDetails;
 import com.telstraassignmentapp.utils.NetworkConnectionCheck;
 import com.telstraassignmentapp.viewmodel.CountryListViewModel;
+
+import java.util.ArrayList;
 import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -22,9 +28,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CountryListFragment extends Fragment  {
+public class CountryListFragment extends Fragment {
 
-     static final String TAG = "CountryListFragment";
+    static final String TAG = "CountryListFragment";
 
     private CountryListRecyclerAdapter countryListRecyclerAdapter;
     private FragmentCountryDetailsBinding fragmentCountryDetailsBinding;
@@ -44,10 +50,6 @@ public class CountryListFragment extends Fragment  {
         fragmentCountryDetailsBinding.rvCountry.addItemDecoration(dividerItemDecoration);
         countryListRecyclerAdapter = new CountryListRecyclerAdapter();
         fragmentCountryDetailsBinding.rvCountry.setAdapter(countryListRecyclerAdapter);
-        // binding.setIsLoading(true);
-
-
-
         return fragmentCountryDetailsBinding.getRoot();
 
     }
@@ -57,12 +59,8 @@ public class CountryListFragment extends Fragment  {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         countryListViewModel = ViewModelProviders.of(this).get(CountryListViewModel.class);
-
         observeViewModel(countryListViewModel, false);
-
         setListeners();
-
-
     }
 
     private void observeViewModel(CountryListViewModel countryListViewModel, final boolean isContentRefresh) {
@@ -78,7 +76,7 @@ public class CountryListFragment extends Fragment  {
                 if (!apiResponse.getCountryDetailsList().isEmpty() && !isContentRefresh) {
                     fragmentCountryDetailsBinding.toolbarLayout.toolbarTitle.setText(apiResponse.getTitle());
                     fragmentCountryDetailsBinding.rvCountry.setVisibility(View.VISIBLE);
-                    fragmentCountryDetailsBinding.toolbarLayout.imgNotificationBell.setVisibility(View.VISIBLE);
+                    fragmentCountryDetailsBinding.toolbarLayout.imgRefresh.setVisibility(View.VISIBLE);
                     fragmentCountryDetailsBinding.txtNoInternetConnection.setVisibility(View.GONE);
                     countryDetailsList = apiResponse.getCountryDetailsList();
                     countryListRecyclerAdapter.setCountryDetailsList(countryDetailsList);
@@ -87,7 +85,7 @@ public class CountryListFragment extends Fragment  {
                     fragmentCountryDetailsBinding.toolbarLayout.toolbarTitle.setText(apiResponse.getTitle());
                     refreshList.addAll(apiResponse.getCountryDetailsList());
                     fragmentCountryDetailsBinding.rvCountry.setVisibility(View.VISIBLE);
-                    fragmentCountryDetailsBinding.toolbarLayout.imgNotificationBell.setVisibility(View.VISIBLE);
+                    fragmentCountryDetailsBinding.toolbarLayout.imgRefresh.setVisibility(View.VISIBLE);
                     fragmentCountryDetailsBinding.txtNoInternetConnection.setVisibility(View.GONE);
                     countryListRecyclerAdapter.setCountryDetailsList(refreshList);
                 }
@@ -98,7 +96,7 @@ public class CountryListFragment extends Fragment  {
 
     private void setListeners() {
 
-        fragmentCountryDetailsBinding.toolbarLayout.imgNotificationBell.setOnClickListener(new View.OnClickListener() {
+        fragmentCountryDetailsBinding.toolbarLayout.imgRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fragmentCountryDetailsBinding.rvCountry.setVisibility(View.GONE);
@@ -106,6 +104,4 @@ public class CountryListFragment extends Fragment  {
             }
         });
     }
-
-
 }

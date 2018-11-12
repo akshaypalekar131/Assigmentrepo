@@ -13,6 +13,4 @@ public interface ApiCaller {
 
     @GET(factsUrl)
     Call<ApiResponse> getApiResponse();
-
-
 }

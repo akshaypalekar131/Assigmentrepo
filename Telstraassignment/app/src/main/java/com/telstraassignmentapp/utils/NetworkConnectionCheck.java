@@ -31,7 +31,7 @@ public class NetworkConnectionCheck {
         ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivity != null) {
             Network[] networks = connectivity.getAllNetworks();
-            if(networks!=null) {
+            if (networks != null) {
                 NetworkInfo networkInfo;
                 for (Network network : networks) {
                     networkInfo = connectivity.getNetworkInfo(network);
@@ -44,6 +44,4 @@ public class NetworkConnectionCheck {
         return false;
 
     }
-
-
 }

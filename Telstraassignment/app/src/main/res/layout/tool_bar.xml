@@ -36,13 +36,13 @@
                 android:textColor="@android:color/white" />
 
             <ImageView
-                android:id="@+id/img_notification_bell"
+                android:id="@+id/img_refresh"
                 android:layout_width="?attr/actionBarSize"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_weight="0.3"
                 android:contentDescription="@string/content_description"
                 android:scaleType="center"
-                android:src="@drawable/img_refresh"
+                android:src="@drawable/imgrefresh"
                 android:visibility="gone" />
         </LinearLayout>
 
