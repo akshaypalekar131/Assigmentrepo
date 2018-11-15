@@ -1,11 +1,8 @@
 package com.telstraassignmentapp.view;
 
 import android.os.Bundle;
-
-import com.telstraassignmentapp.R;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
 public class CountryActivity extends AppCompatActivity {
 

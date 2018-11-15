@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
 
         <variable
@@ -30,8 +29,8 @@
             android:textColor="@color/country_description_color"
             android:textSize="@dimen/sp_15" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_country"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_country_details"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/sp_10"

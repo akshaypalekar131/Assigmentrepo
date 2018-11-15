@@ -3,9 +3,9 @@ package com.telstraassignmentapp;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import org.junit.Test;
+import android.support.test.InstrumentationRegistry;
 
-import androidx.test.InstrumentationRegistry;
+import org.junit.Test;
 
 
 public class CheckNetworkTest {

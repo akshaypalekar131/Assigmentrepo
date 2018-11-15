@@ -1,17 +1,14 @@
 package com.telstraassignmentapp.view;
 
+import android.databinding.DataBindingUtil;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
-import com.telstraassignmentapp.R;
 import com.telstraassignmentapp.databinding.CountryListItemBinding;
 import com.telstraassignmentapp.model.CountryDetails;
-
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class CountryListRecyclerAdapter extends RecyclerView.Adapter<CountryListRecyclerAdapter.CountryListViewHolder> {
 

@@ -1,12 +1,10 @@
 package com.telstraassignmentapp.viewmodel;
 
 import android.app.Application;
-
+import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import com.telstraassignmentapp.apiinterface.ApiClient;
 import com.telstraassignmentapp.model.ApiResponse;
-
-import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
 
 public class CountryListViewModel extends AndroidViewModel {
 
