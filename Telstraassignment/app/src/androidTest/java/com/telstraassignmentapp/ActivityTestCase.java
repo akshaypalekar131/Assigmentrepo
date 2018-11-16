@@ -8,6 +8,9 @@ import com.telstraassignmentapp.view.CountryActivity;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import com.telstraassignmentapp.R;
 
 
 @RunWith(AndroidJUnit4.class)
@@ -18,6 +21,6 @@ public class ActivityTestCase {
 
     @Test
     public void checkView(){
-        //onView(withId(R.id.fragment_container));
+        onView(withId(R.id.fragment_container));
     }
 }
