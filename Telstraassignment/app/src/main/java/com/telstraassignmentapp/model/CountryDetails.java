@@ -1,9 +1,11 @@
+
 package com.telstraassignmentapp.model;
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.annotations.SerializedName;
+import com.telstraassignmentapp.R;
 
 public class CountryDetails {
 
